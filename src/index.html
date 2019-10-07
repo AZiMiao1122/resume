@@ -68,7 +68,7 @@
           </a>
         </li>
         <li>
-          <a href="tel:13541295797">
+          <a href="tel:15602297291">
             <span class="contact-link">15602297291</span>
             <span class="iconfont">
               <svg width="16px" height="16px" viewBox="0 0 1024 1024">
@@ -301,38 +301,56 @@
            <!-- 项目一 -->
           <div class="item">
             <header class="item-hd">
-              <h3 class="item-name">轻租房东/轻租租房</h3>
+              <h3 class="item-name"><a style="font-weight:bold;font-size: 15px;">轻租房东/轻租life</a></h3>
               <br>
               <span class="item-time">2017/08 – 至今</span>
               <a class="btn item-more">小程序</a>
             </header>
             <div class="item-bd">
-              <p class="item-des"><b style="font-weight:bold;">软件架构:</b> NACOS,SpringBoot,SpringCloud,Zookeeper,Redis,Shiro,ActiveMQ,WebSocket,MySQL</p>
+              <p class="item-des"><b style="font-weight:bold;;">系统架构:</b> NACOS,SpringBoot,SpringCloud,Zookeeper,Redis,Shiro,ActiveMQ,WebSocket,MySQL</p>
               <p class="item-des"><b style="font-weight:bold;">项目概述:</b>轻租是一个自主独立研发的微信小程序项目，是一个结合智能硬件相关的一体式管房租房的服务项目,解决房东的所有租务问题。</p>
-
+              <p class="item-des"><b style="font-weight:bold;">责任描述:</b></p>
               <ul class="section-content">
-                <li>负责校园公众号表白墙项目开发</li>
+                <li>项目框架搭建和选型，解决项目上各种疑难杂症、水电表、财务相关模块等数据库结构搭建。</li>
+                <li>负责较未多类型的消息系统开发、采用WebSocket消息服务来做到小程序站内消息实时推送、例如有系统消息、租房消息、合同消息、欠租、退租消息等等。</li>
+                <li>水电表读取接口编写和优化计算算法、同样使用动态规划完成。</li>
+                <li>微信授权拦截器、token验证、各种便携开发工具类编写、微信支付、微信提现到零钱、阿里云短信、阿里云实名认证、腾讯地图等第三方对接。</li>
+                <li>财务大模块开发、其中有账单自动计算生成、签约逻辑业务、违约逻辑业务、续租逻辑业务、退房逻辑业务、交租、使用优惠券交租逻辑业务、各项限制逻辑业务等财务相关开发，后台财务统计、提现管理、个人流水详情业务开发。</li>
               </ul>
-              <br>
-              <p class="item-des">在校期间在一家小型公司实习:</p>
-              <ul class="section-content">
-                <li>参与项目部分数据库表设计</li>
-                <li>参与项目所属模块的开发</li>
-              </ul>
+               <p class="item-des"><b style="font-weight:bold;">难点解决方案:</b></p>
+                <ul class="section-content">
+                  <li>起初项目较小时直接使用java里面的定时任务足够支撑当时的基础业务，当业务越来越广时，那些定时任务不方便管理和测试导致开发与测试效率低下且常出错等问题。于是改造为基于elastic-job+zookeeper来实现高可用易管理的分布式定时任务，常用的定时任务就是读取智能硬件水电表数据，账单生成、计算、逾期、退房、消息通知等等各项业务，自此后效率就提高上来了。</li>
+                  <li>项目刚开始时记录水电表每天的读数都储存在数据库各项字段上，随着业务的不断增加，例如合约月计算等，操作数据库复杂且繁琐，耗费性能占用高、当时便重构这一小块。储存结构不再以每一天占一个数据库字段的方式，改为使用矩阵储存各日数据、方便合约日切割数据(相当于切片)，再结合动态规划算法、能够低性能计算出当日到各个月的水电表读数用量。</li>
+                  <li>
+                    版本迭代时往往需要做一些数据兼容和迁移数据，编写sql语句和java解决较为复杂，所以基本上我是用python来按某些迭代规则来做数据处理。好确保新版本能准时上线。
+                  </li>
+                </ul>
             </div>
           </div>
 
-
-          
+          <div class="item">
+            <header class="item-hd">
+              <h3 class="item-name"><a style="font-weight:bold;font-size: 15px;">第九宫殿</a></h3>
+              <br>
+              <span class="item-time">2016/12 - 2017/5</span>
+              <a class="btn item-more">APP</a>
+            </header>
+            <div class="item-bd">
+              <p class="item-des"><b style="font-weight:bold;;">系统架构:</b> SpringBoot、MyBatis、Shiro、MySQL、Redis</p>
+              <p class="item-des"><b style="font-weight:bold;">项目概述:</b>第九宫殿是一款针对全国高校研发而出的新型互联网+校企合作服务平台，以校企双主体协同育人，产、学、研融合为中心理念，专注于大学生群体才艺展示、创意创作、实现人才发掘与作品转化的APP。</p>
+              <p class="item-des"><b style="font-weight:bold;">责任描述:</b></p>
+              <ul class="section-content">
+                <li>参与需求讨论分析以及实现方案。</li>
+                <li>商城模块数据库设计、APP服务端商城模块全业务开发、其中有：商品分类、商品详情与图片、商品规格、商品服务、商品参数、订单相关、退货管理；APP后台CMS全商城模块开发。</li>
+                <li>微信支付和支付宝支付对接与测试、极光推送和环信对接，使用AOP记录用户操作日志。</li>
+                <li>协作负责活动、惊喜模块同事开发、协助APP端同事对接接口、解决BUG等。</li>
+                <li>相应开发接口的API文档编写。</li>         
+              </ul>
+            </div>
+          </div>       
         </div>
       </section>
-
     </div>
-
-
-
-
-
   </div>
 </main>
 
@@ -341,3 +359,28 @@
 </footer>
 </body>
 </html>
+  <!-- 脚本原版 -->
+<!-- {
+  "scripts": {
+    "dev": "webpack-dev-server --open --hot",
+    "pub": "NODE_ENV=production webpack --config webpack-dist.config.js && rm -rf .public",
+    "build": "node build/build.js"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "chrome-finder": "^1.0.1",
+    "compass-mixins": "^0.12.10",
+    "css-loader": "^0.28.5",
+    "end-webpack-plugin": "^1.0.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "gh-pages": "^1.0.0",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.6",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.18.0",
+    "web-webpack-plugin": "^1.9.3",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
+  }
+}
+ -->
